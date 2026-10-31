@@ -1,14 +1,21 @@
 # Machine Learning — THA1 (Group 17)
 
-Simple linear regression of net hourly electrical output against temperature, using 20 observations.
+Linear and quadratic regression of electrical power output against temperature, using Group 17's 20 observations. Data is included directly in the scripts.
 
-`code/a.sl-regression.py` includes Z-score standardization, least-squares regression, and gradient descent with cost convergence tracking. It saves plots of the fitted lines and cost history in the current working directory.
+- `code/a.i.py`: linear regression using least squares and gradient descent.
+- `code/a.ii.py`: quadratic regression using gradient descent.
 
 ## Run
 
-Requires Python, NumPy, Matplotlib, and Tk support for the configured `TkAgg` backend.
+The environment and dependencies are managed with `uv`. Requires `uv` and Python 3.13 or newer. A.I also requires Tk support and a graphical display.
+
+From the project directory, install dependencies and run:
 
 ```bash
-pip install numpy matplotlib
-python code/a.sl-regression.py
+uv sync
+cd code
+uv run a.i.py
+uv run a.ii.py
 ```
+
+Figures are saved in the current working directory (`code/` when using the commands above).
